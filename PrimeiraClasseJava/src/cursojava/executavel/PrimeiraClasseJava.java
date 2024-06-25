@@ -13,9 +13,11 @@ public class PrimeiraClasseJava {
 		 
 		 /*new Aluno() é uma instancia de objeto (criação de objeto)*/
 		 
+		 
+		 /*
 		 String nome = JOptionPane.showInputDialog("Qual seria o nome do aluno?");
 		 String idade = JOptionPane.showInputDialog("Qual seria a idade do aluno?");
-		 String dataMatricula = JOptionPane.showInputDialog("Qual seria a data de matrículao?");
+		 String dataMatricula = JOptionPane.showInputDialog("Qual seria a data em que foi realizada a matrícula?");
 		 String dataNascimento = JOptionPane.showInputDialog("Qual seria a data de nascimento?");
 		 String escola = JOptionPane.showInputDialog("Qual seria o nome da escola?");
 		 String nomeMae = JOptionPane.showInputDialog("Qual seria o nome da mãe?");
@@ -28,10 +30,14 @@ public class PrimeiraClasseJava {
 		 String nota3 = JOptionPane.showInputDialog("Qual foi a terceira nota?");
 		 String nota4 = JOptionPane.showInputDialog("Qual foi a quarta nota?");
 		 
+		 */
 		 
 		 /*aluno 1 é uma referência para o objeto aluno*/
 		 /*Objeto ainda não existe na memoria*/
-		 Aluno aluno1 = new Aluno(); /* Aqui sera o João*/
+		 
+		 
+		 /*
+		 Aluno aluno1 = new Aluno(); 
 		 
 		 aluno1.setNome(nome);
 		 aluno1.setIdade(Integer.valueOf(idade));
@@ -48,16 +54,24 @@ public class PrimeiraClasseJava {
 		 aluno1.setNota3(Double.parseDouble(nota3));
 		 aluno1.setNota4(Double.parseDouble(nota4));
 		 
-		 System.out.println("O nome do aluno 1 é: " + aluno1.getNome());
-		 System.out.println("Sua idade é: " + aluno1.getIdade());
-		 System.out.println("Sua data de nascimento é: ");
-		 System.out.println("Sua media de notas é: " + aluno1.getMediaNota());
-		 System.out.println("E ele foi: " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
-		 System.out.println("E ele foi: " + aluno1.getAlunoAprovado1());
+		 System.out.println(aluno1.toString());
+		 System.out.println("Média do aluno: " + aluno1.getMediaNota());
+		 System.out.println("E ele foi " + aluno1.getAlunoAprovado1());
+		 */
 		 
+		 Aluno aluno1 = new Aluno();
+		 aluno1.setNome("Ciclano");
+		 aluno1.setNumeroCpf("123");
 		 
+		 Aluno aluno2 = new Aluno();
+		 aluno2.setNome("Ciclano");
+		 aluno2.setNumeroCpf("123");
 		 
-		 
+		 if (aluno1.equals(aluno2)) {
+			 System.out.println("Os dois alunos são iguais");
+		 } else {
+			 System.out.println("Os dois alunos não são iguais");
+		 }
 	}
 	 
  }
