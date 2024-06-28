@@ -10,6 +10,8 @@ public class Disciplina {
 	private double nota3;
 	private double nota4;
 	
+	
+	
 	public String getDisciplina1() {
 		return disciplina1;
 	}
