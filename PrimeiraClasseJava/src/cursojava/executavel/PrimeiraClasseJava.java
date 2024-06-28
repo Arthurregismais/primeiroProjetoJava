@@ -3,6 +3,7 @@ package cursojava.executavel;
 import javax.swing.JOptionPane;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Disciplina;
 
 
 public class PrimeiraClasseJava {
@@ -26,15 +27,6 @@ public class PrimeiraClasseJava {
 		 String cpf = JOptionPane.showInputDialog("Qual seria o CPF?");
 		 String serieMatriculado = JOptionPane.showInputDialog("Qual seria a série em que o aluno foi matriculado?");
 		 
-		 String disciplina1 = JOptionPane.showInputDialog("Qual foi a primeira disciplina?");
-		 String nota1 = JOptionPane.showInputDialog("Qual foi a primeira nota?");
-		 String disciplina2 = JOptionPane.showInputDialog("Qual foi a segunda disciplina?");
-		 String nota2 = JOptionPane.showInputDialog("Qual foi a segunda nota?");
-		 String disciplina3 = JOptionPane.showInputDialog("Qual foi a terceira disciplina?");
-		 String nota3 = JOptionPane.showInputDialog("Qual foi a terceira nota?");
-		 String disciplina4 = JOptionPane.showInputDialog("Qual foi a quarta disciplina?");
-		 String nota4 = JOptionPane.showInputDialog("Qual foi a quarta nota?");
-		 
 		 
 		 
 		 
@@ -56,6 +48,29 @@ public class PrimeiraClasseJava {
 		 aluno1.setNumeroCpf(cpf);
 		 aluno1.setSerieMatriculado(serieMatriculado);
 		 
+		 Disciplina disciplina1 = new Disciplina();
+		 disciplina1.setDisciplina("Gramática");
+		 disciplina1.setNota(80);
+		 
+		 aluno1.getDisciplinas().add(disciplina1);
+		 
+		 Disciplina disciplina2 = new Disciplina();
+		 disciplina2.setDisciplina("Artes");
+		 disciplina2.setNota(90);
+		 
+		 aluno1.getDisciplinas().add(disciplina2);
+		 
+		 Disciplina disciplina3 = new Disciplina();
+		 disciplina3.setDisciplina("Educaçao Física");
+		 disciplina3.setNota(87);
+		 
+		 aluno1.getDisciplinas().add(disciplina3);
+		 
+		 Disciplina disciplina4 = new Disciplina();
+		 disciplina4.setDisciplina("Historia");
+		 disciplina4.setNota(79);
+		 
+		 aluno1.getDisciplinas().add(disciplina4);
 		 
 		 
 		 System.out.println(aluno1.toString());

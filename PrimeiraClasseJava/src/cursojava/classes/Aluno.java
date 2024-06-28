@@ -131,17 +131,15 @@ public class Aluno {
 		return this.nome;
 	}
 	
-	public Disciplina getDisciplina() {
-		return disciplina;
-	}
-
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
-	}
-	
 	
 	public double getMediaNota() {
-		return 0 ;
+		
+		double somaNotas = 0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		return somaNotas / disciplinas.size() ;
 	}
 	
 	
