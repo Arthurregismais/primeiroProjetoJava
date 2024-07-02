@@ -85,11 +85,15 @@ public class PrimeiraClasseJava {
 		 }
 	
 		 for (Aluno aluno : alunos) {
-			
-			 System.out.println(aluno.toString());
-			 System.out.println("Média do aluno: " + aluno.getMediaNota());
-			 System.out.println("E ele foi " + aluno.getAlunoAprovado());
-			 System.out.println("---------------------------------------");
+			 
+			 if (aluno.getNome().equalsIgnoreCase("fulano")) {
+				 
+				 System.out.println(aluno.toString());
+				 System.out.println("Média do aluno: " + aluno.getMediaNota());
+				 System.out.println("E ele foi " + aluno.getAlunoAprovado());
+				 System.out.println("---------------------------------------");
+				 
+			 }
 		}
 		 
 		 
