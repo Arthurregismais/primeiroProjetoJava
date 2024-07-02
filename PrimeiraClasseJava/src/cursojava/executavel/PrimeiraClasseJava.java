@@ -48,29 +48,16 @@ public class PrimeiraClasseJava {
 		 aluno1.setNumeroCpf(cpf);
 		 aluno1.setSerieMatriculado(serieMatriculado);
 		 
-		 Disciplina disciplina1 = new Disciplina();
-		 disciplina1.setDisciplina("Gramática");
-		 disciplina1.setNota(80);
-		 
-		 aluno1.getDisciplinas().add(disciplina1);
-		 
-		 Disciplina disciplina2 = new Disciplina();
-		 disciplina2.setDisciplina("Artes");
-		 disciplina2.setNota(90);
-		 
-		 aluno1.getDisciplinas().add(disciplina2);
-		 
-		 Disciplina disciplina3 = new Disciplina();
-		 disciplina3.setDisciplina("Educaçao Física");
-		 disciplina3.setNota(87);
-		 
-		 aluno1.getDisciplinas().add(disciplina3);
-		 
-		 Disciplina disciplina4 = new Disciplina();
-		 disciplina4.setDisciplina("Historia");
-		 disciplina4.setNota(79);
-		 
-		 aluno1.getDisciplinas().add(disciplina4);
+		 for (int pos = 1; pos <= 4; pos++ ) {
+			 String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+pos+ " ?");
+			 String notaDisciplina = JOptionPane.showInputDialog("Nota: "+pos+ " ?");
+			 
+			 Disciplina disciplina = new Disciplina();
+			 disciplina.setDisciplina(nomeDisciplina);
+			 disciplina.setNota(Double.valueOf(notaDisciplina));
+			 
+			 aluno1.getDisciplinas().add(disciplina);
+		 }
 		 
 		 
 		 System.out.println(aluno1.toString());
