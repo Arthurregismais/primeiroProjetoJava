@@ -143,25 +143,28 @@ public class Aluno {
 	}
 	
 	
-	/* Este metodo faz a validação chamando diretamente a função de obter a media e retorna uma string formada */
-	public String getAlunoAprovado1() {
-		if (getMediaNota() >= 70 ) {
-			return "Aprovado";
-		}
-		else {
+	/* Este metodo faz a validação chamando a função de obter a media e atrobuindo o valor a uma variavel, retornando uma string formada */
+	public String getAlunoAprovado() {
+		double media = getMediaNota();
+		if (media >= 50 ) {
+			if (media >= 70) {
+				return "Aprovado";
+			} else {
+				return "Em recuperação";
+			}
+		}else {
 			return "Reprovado";
 		}
 	}
 	
 	
 	/*Metodo que retorna true para aprovado e false para reprovado*/
-	public boolean getAlunoAprovado() {
-		double media = this.getMediaNota();
-		if (media >= 70 ) {
-			return true;
-		}
-		else {
-			return false;
+	public boolean getAlunoAprovado1() {
+		double media = this.getMediaNota(); 
+			if (media >= 70 ) {
+				return true;
+			}else {
+				return false;
 		}
 	}
 
