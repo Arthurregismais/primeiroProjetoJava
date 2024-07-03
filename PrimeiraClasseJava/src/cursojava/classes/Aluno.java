@@ -3,6 +3,8 @@ package cursojava.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import cursojava.constantes.StatusAluno;
+
 /*Esta é nossa classe que representa o Aluno*/
 
 public class Aluno {
@@ -143,17 +145,16 @@ public class Aluno {
 	}
 	
 	
-	/* Este metodo faz a validação chamando a função de obter a media e atrobuindo o valor a uma variavel, retornando uma string formada */
 	public String getAlunoAprovado() {
 		double media = getMediaNota();
 		if (media >= 50 ) {
 			if (media >= 70) {
-				return "Aprovado";
+				return StatusAluno.APROVADO;
 			} else {
-				return "Em recuperação";
+				return StatusAluno.RECUPERACAO;
 			}
 		}else {
-			return "Reprovado";
+			return StatusAluno.REPROVADO;
 		}
 	}
 	
