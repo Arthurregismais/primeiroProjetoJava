@@ -57,5 +57,9 @@ public class Pessoa {
 	}
 	
 	
+	// Retorna True se a pessoa tem 18 anos ou mais
+	public boolean pessoaMaiorIdade () {
+		return idade >= 18;
+	}
 	
 }
