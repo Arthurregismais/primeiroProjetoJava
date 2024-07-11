@@ -62,4 +62,7 @@ public abstract class Pessoa {
 		return idade >= 18;
 	}
 	
+	// Metodo abstrato que fica na classe pai é obrigatório para as classes filhas
+	public abstract double salario ();
+	
 }
