@@ -1,9 +1,12 @@
 package cursojava.executavel;
 
 import javax.swing.JOptionPane;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import cursojava.classes.Aluno;
 import cursojava.classes.Diretor;
@@ -20,6 +23,9 @@ public class PrimeiraClasseJava {
 	 public static void main(String[] args) {
 		 
 		 try {
+			 
+			 File file = new File("C://lines.txt");
+			 Scanner scanner = new Scanner(file);
 			 
 			 String login = JOptionPane.showInputDialog("Informe seu login");
 			 String senha = JOptionPane.showInputDialog("Informe sua senha");
@@ -159,14 +165,12 @@ public class PrimeiraClasseJava {
 			 }
 			 
 			 JOptionPane.showMessageDialog(null, "Erro de conversão de número" + saida.toString());
-			 
-		} catch (NullPointerException e) {
-			JOptionPane.showMessageDialog(null, "Opa um Null Pointer Exception aconteceu!" );
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		 
+			 } catch (NullPointerException e) {
+				 JOptionPane.showMessageDialog(null, "Opa um Null Pointer Exception aconteceu!" + e.getClass() );
+			 } catch (Exception e) { // Captura todas as exceções que não prevemos
+				 e.printStackTrace();
+				 JOptionPane.showMessageDialog(null, "Erro Inesperado: " + e.getClass().getName());
+			 } 
 		 
 		  
 	}    
