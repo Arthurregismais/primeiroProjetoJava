@@ -141,9 +141,22 @@ public class PrimeiraClasseJava {
 			 }
 			 
 		 } catch (Exception e) {
+			 
+			 StringBuilder saida = new StringBuilder();
 
 			 e.printStackTrace(); // Imprime no console Java o erro
-			 JOptionPane.showMessageDialog(null, "Erro ao processar os dados");
+			 
+			 // Mensagem do erro  ou causa
+			 System.out.println("Mensagem:  " + e.getMessage());
+			 
+			 for (int i = 0; i < e.getStackTrace().length; i++) {
+				 saida.append("\n Classe de erro: " + e.getStackTrace()[i].getClassName());
+				 saida.append("\n Método de erro: " + e.getStackTrace()[i].getMethodName());
+				 saida.append("\n Linha de erro: " + e.getStackTrace()[i].getLineNumber());
+				 saida.append("\n Linha de erro: " + e.getClass().getName());
+			 }
+			 
+			 JOptionPane.showMessageDialog(null, "Erro ao processar os dados" + saida.toString());
 		}
 		 
 		 
