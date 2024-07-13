@@ -3,6 +3,7 @@ package cursojava.executavel;
 import javax.swing.JOptionPane;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,17 +16,19 @@ import cursojava.classes.Secretario;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
+import cursojava.execao.ExcecaoProcessarNota;
 
 
 public class PrimeiraClasseJava {
 	
 	/*Main é um metodo auto executavel em Java*/
-	 public static void main(String[] args) {
+	 public static void main(String[] args) throws ExcecaoProcessarNota {
+		 
+		 
 		 
 		 try {
 			 
-			 File file = new File("C://lines.txt");
-			 Scanner scanner = new Scanner(file);
+			 lerArquivo();
 			 
 			 String login = JOptionPane.showInputDialog("Informe seu login");
 			 String senha = JOptionPane.showInputDialog("Informe sua senha");
@@ -164,17 +167,28 @@ public class PrimeiraClasseJava {
 				 saida.append("\n Linha de erro: " + e.getClass().getName());
 			 }
 			 
-			 JOptionPane.showMessageDialog(null, "Erro de conversão de número" + saida.toString());
+			 JOptionPane.showMessageDialog(null, "Erro de conversão de número " + saida.toString());
+			 
 			 } catch (NullPointerException e) {
-				 JOptionPane.showMessageDialog(null, "Opa um Null Pointer Exception aconteceu!" + e.getClass() );
-			 } catch (Exception e) { // Captura todas as exceções que não prevemos
+				 JOptionPane.showMessageDialog(null, "Opa um Null Pointer Exception aconteceu! " + e.getClass() );
+				 
+			 } catch (ExcecaoProcessarNota e) { // Captura todas as exceções que não prevemos
 				 e.printStackTrace();
-				 JOptionPane.showMessageDialog(null, "Erro Inesperado: " + e.getClass().getName());
+				 JOptionPane.showMessageDialog(null, "Erro da exceção customizada: " + e.getClass().getName());
+				 
 			 } finally { // Sempre é executado, independente de ocorrerem erros ou não
 				JOptionPane.showMessageDialog(null, "Você está aprendendo Java, parabéns! ");
 			}
 		 
-		  
-	}    
+	 }    
+	 public static void lerArquivo () throws ExcecaoProcessarNota {
+		 try {
+			 File file = new File("c://lines.txt");
+			 Scanner scanner = new Scanner(file);
+			 
+		} catch (FileNotFoundException e) {
+			throw new ExcecaoProcessarNota(e.getMessage());
+		}
+	 }
 		 
  }
