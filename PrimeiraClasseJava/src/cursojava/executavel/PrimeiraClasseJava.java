@@ -41,7 +41,8 @@ public class PrimeiraClasseJava {
 					 
 					 
 					 String nome = JOptionPane.showInputDialog("Qual seria o nome do aluno " +qtd+ " ?");
-					 /*String idade = JOptionPane.showInputDialog("Qual seria a idade do aluno?");
+					 String idade = JOptionPane.showInputDialog("Qual seria a idade do aluno?");
+					 /*
 			 String dataMatricula = JOptionPane.showInputDialog("Qual seria a data em que foi realizada a matrícula?");
 			 String dataNascimento = JOptionPane.showInputDialog("Qual seria a data de nascimento?");
 			 String escola = JOptionPane.showInputDialog("Qual seria o nome da escola?");
@@ -62,7 +63,8 @@ public class PrimeiraClasseJava {
 					 Aluno aluno1 = new Aluno(); 
 					 
 					 aluno1.setNome(nome);
-					 /*aluno1.setIdade(Integer.valueOf(idade));
+					 aluno1.setIdade(Integer.valueOf(idade));
+					 /*
 			 aluno1.setDataMatricula(dataMatricula);
 			 aluno1.setDataNascimento(dataNascimento);
 			 aluno1.setNomeEscola(escola);
@@ -140,7 +142,7 @@ public class PrimeiraClasseJava {
 				 JOptionPane.showMessageDialog(null, "Acesso não permitido");
 			 }
 			 
-		 } catch (Exception e) {
+		 } catch (NumberFormatException e) {
 			 
 			 StringBuilder saida = new StringBuilder();
 
@@ -156,7 +158,13 @@ public class PrimeiraClasseJava {
 				 saida.append("\n Linha de erro: " + e.getClass().getName());
 			 }
 			 
-			 JOptionPane.showMessageDialog(null, "Erro ao processar os dados" + saida.toString());
+			 JOptionPane.showMessageDialog(null, "Erro de conversão de número" + saida.toString());
+			 
+		} catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Opa um Null Pointer Exception aconteceu!" );
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		 
 		 
