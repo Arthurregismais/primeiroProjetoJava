@@ -15,9 +15,11 @@ public class ArrayVetor {
 		notas[2] = 8.9;
 		notas[3] = 9.6;
 		
+		for (int pos = 0; pos < notas.length; pos++) {
+			System.out.println("Nota " + (pos + 1) + " é " + notas[pos]);
+		}
 		
 		
-		System.out.println(notas);
 		
 		
 	} 
