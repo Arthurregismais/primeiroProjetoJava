@@ -32,6 +32,16 @@ public class ArrayVetor {
 		
 		aluno.getDisciplinas().add(disciplina2);
 		
+		System.out.println("----------Disciplina do Aluno-----------");
+		for (Disciplina d : aluno.getDisciplinas()) {
+			
+			System.out.println("Disciplina: " + d.getDisciplina());
+			System.out.println("As notas da disciplina são: ");
+			for (int pos = 0; pos < d.getNota().length; pos++) {
+				System.out.println("Nota " + pos + " é igual = " + d.getNota()[pos]);
+			}
+		}
+		
 	} 
 	
 }
