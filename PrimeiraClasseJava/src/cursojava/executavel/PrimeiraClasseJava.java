@@ -84,7 +84,7 @@ public class PrimeiraClasseJava {
 			 aluno1.setSerieMatriculado(serieMatriculado);
 					  */
 					 
-					 for (int pos = 1; pos <= 4; pos++ ) {
+					 for (int pos = 1; pos <= 2; pos++ ) {
 						 String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+pos+ " ?");
 						 String notaDisciplina = JOptionPane.showInputDialog("Nota: "+pos+ " ?");
 						 
