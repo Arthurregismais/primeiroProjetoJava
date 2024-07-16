@@ -1,4 +1,4 @@
-package cursojava.execao;
+package cursojava.excecao;
 
 public class ExcecaoProcessarNota extends Exception{
 

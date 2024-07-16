@@ -2,6 +2,7 @@ package cursojava.executavel;
 
 import javax.swing.JOptionPane;
 
+
 import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 
@@ -32,26 +33,48 @@ public class ArrayVetor {
 		
 		aluno.getDisciplinas().add(disciplina2);
 		
-		System.out.println("----------Disciplina do Aluno-----------");
-		for (Disciplina d : aluno.getDisciplinas()) {
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome("Beltrano de Souza");
+		aluno2.setNomeEscola("Super treinamentos");
+		
+		
+		//Criação da Disciplina
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("Curso de Javascript");
+		disciplina3.setNota(notas);
+		
+		aluno2.getDisciplinas().add(disciplina);
+		
+		Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("CSS");
+		disciplina4.setNota(notasLogica);
+		
+		aluno2.getDisciplinas().add(disciplina4);
+		
+		
+		// ------------------------------------------------------------
+		
+		Aluno[] arrayAlunos = new Aluno[2];
+		arrayAlunos[0] = aluno;
+		arrayAlunos[1] = aluno2;
+		
+		for (int pos = 0; pos < arrayAlunos.length; pos++) {
 			
-			System.out.println("Disciplina: " + d.getDisciplina());
-			System.out.println("As notas da disciplina são: ");
+			System.out.println("Nome do aluno é : " + arrayAlunos[pos].getNome());
 			
-			double notaMenor = 0.0;
-			
-			for (int pos = 0; pos < d.getNota().length; pos++) {
-				if (pos == 0) {
-					notaMenor = d.getNota()[pos];
-				} else {
-					if (d.getNota()[pos] < notaMenor) {
-						notaMenor = d.getNota()[pos];
-					}
+			for (Disciplina d : arrayAlunos[pos].getDisciplinas()) {
+				
+				System.out.println("Nome da disciplina : " + d.getDisciplina());
+				
+				for (int posNota = 0; posNota < d.getNota().length; posNota++) {
+					System.out.println("A nota número : " + (posNota + 1) + " é igual = " + d.getNota()[posNota]);
+					
 				}
-				System.out.println("Nota " + pos + " é igual = " + d.getNota()[pos]);
 			}
-			System.out.println("A menor nota da Disciplina = " + d.getDisciplina() + " e de valor : " + notaMenor);
-		}
-	} 
-	
+			System.out.println("----------------------------------------");
+			
+		} 
+		
+		
+	}
 }

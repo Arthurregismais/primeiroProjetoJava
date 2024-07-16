@@ -15,8 +15,8 @@ import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.excecao.ExcecaoProcessarNota;
 import cursojava.interfaces.PermitirAcesso;
-import cursojava.execao.ExcecaoProcessarNota;
 
 
 public class PrimeiraClasseJava {
