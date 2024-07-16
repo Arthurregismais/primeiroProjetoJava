@@ -44,13 +44,13 @@ public class ArrayVetor {
 				if (pos == 0) {
 					notaMaior = d.getNota()[pos];
 				} else {
-					if (d.getNota()[pos] > notaMaior) {
+					if (d.getNota()[pos] < notaMaior) {
 						notaMaior = d.getNota()[pos];
 					}
 				}
 				System.out.println("Nota " + pos + " é igual = " + d.getNota()[pos]);
 			}
-			System.out.println("A maior nota da Disciplina = " + d.getDisciplina() + " e de valor : " + notaMaior);
+			System.out.println("A menor nota da Disciplina = " + d.getDisciplina() + " e de valor : " + notaMaior);
 		}
 	} 
 	
