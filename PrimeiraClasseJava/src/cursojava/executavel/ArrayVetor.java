@@ -38,19 +38,19 @@ public class ArrayVetor {
 			System.out.println("Disciplina: " + d.getDisciplina());
 			System.out.println("As notas da disciplina são: ");
 			
-			double notaMaior = 0.0;
+			double notaMenor = 0.0;
 			
 			for (int pos = 0; pos < d.getNota().length; pos++) {
 				if (pos == 0) {
-					notaMaior = d.getNota()[pos];
+					notaMenor = d.getNota()[pos];
 				} else {
-					if (d.getNota()[pos] < notaMaior) {
-						notaMaior = d.getNota()[pos];
+					if (d.getNota()[pos] < notaMenor) {
+						notaMenor = d.getNota()[pos];
 					}
 				}
 				System.out.println("Nota " + pos + " é igual = " + d.getNota()[pos]);
 			}
-			System.out.println("A menor nota da Disciplina = " + d.getDisciplina() + " e de valor : " + notaMaior);
+			System.out.println("A menor nota da Disciplina = " + d.getDisciplina() + " e de valor : " + notaMenor);
 		}
 	} 
 	
