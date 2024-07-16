@@ -43,7 +43,7 @@ public class ArrayVetor {
 		disciplina3.setDisciplina("Curso de Javascript");
 		disciplina3.setNota(notas);
 		
-		aluno2.getDisciplinas().add(disciplina);
+		aluno2.getDisciplinas().add(disciplina3);
 		
 		Disciplina disciplina4 = new Disciplina();
 		disciplina4.setDisciplina("CSS");
