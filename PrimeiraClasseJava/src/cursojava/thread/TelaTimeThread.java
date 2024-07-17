@@ -5,6 +5,10 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -24,6 +28,25 @@ public class TelaTimeThread extends JDialog {
 	
 	private JButton jButtonStart = new JButton("Start");
 	private JButton jButtonStop = new JButton("Stop");
+	
+	private Runnable thread1 = new Runnable() {
+		@Override
+		public void run() {
+			while (true) { // Vai ficar sempre rodando até eu matar a thread
+				mostraTempo.setText(new SimpleDateFormat("dd//MM/yyyy hh:mm.ss").
+						format(Calendar.getInstance().getTime()));
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+	};
+	
+	private Thread thread1Time;
 
 	
 	public TelaTimeThread() { // Executa o que tiver dentro no momento da abertura ou da execução
@@ -62,14 +85,33 @@ public class TelaTimeThread extends JDialog {
 		
 		gridBagConstraints.gridwidth = 1;
 		
-		// Botões 
+		/* < ------------------------------------- Botões -----------------------------------------------> */
 		jButtonStart.setPreferredSize(new Dimension(92, 25));
 		gridBagConstraints.gridy++;
 		jPanel.add(jButtonStart, gridBagConstraints);
 		
+		jButtonStart.addActionListener(new ActionListener() { // Executa clicando no botão Start
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				thread1Time = new Thread(thread1);
+				thread1Time.start();
+				
+			}
+		} );
+		
 		jButtonStop.setPreferredSize(new Dimension(92, 25));
 		gridBagConstraints.gridx++;
 		jPanel.add(jButtonStop, gridBagConstraints);
+		
+		jButtonStop.addActionListener(new ActionListener() { // Executa clicando no botão Stop
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				thread1Time.stop();
+				
+			}
+		});
 		
 		
 		add(jPanel, BorderLayout.WEST);
