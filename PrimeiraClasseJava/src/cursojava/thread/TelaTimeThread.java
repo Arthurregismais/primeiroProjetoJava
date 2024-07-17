@@ -33,7 +33,24 @@ public class TelaTimeThread extends JDialog {
 		@Override
 		public void run() {
 			while (true) { // Vai ficar sempre rodando até eu matar a thread
-				mostraTempo.setText(new SimpleDateFormat("dd//MM/yyyy hh:mm.ss").
+				mostraTempo.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm.ss").
+						format(Calendar.getInstance().getTime()));
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+	};
+	
+	private Runnable thread2 = new Runnable() {
+		@Override
+		public void run() {
+			while (true) { // Vai ficar sempre rodando até eu matar a thread
+				mostraTempo2.setText(new SimpleDateFormat("dd-MM-yyyy hh:mm:ss").
 						format(Calendar.getInstance().getTime()));
 				try {
 					Thread.sleep(1000);
@@ -47,6 +64,7 @@ public class TelaTimeThread extends JDialog {
 	};
 	
 	private Thread thread1Time;
+	private Thread thread2Time;
 
 	
 	public TelaTimeThread() { // Executa o que tiver dentro no momento da abertura ou da execução
@@ -97,6 +115,12 @@ public class TelaTimeThread extends JDialog {
 				thread1Time = new Thread(thread1);
 				thread1Time.start();
 				
+				thread2Time = new Thread(thread2);
+				thread2Time.start();
+				
+				jButtonStart.setEnabled(false);
+				jButtonStop.setEnabled(true);
+				
 			}
 		} );
 		
@@ -109,10 +133,15 @@ public class TelaTimeThread extends JDialog {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				thread1Time.stop();
+				thread2Time.stop();
+				
+				jButtonStart.setEnabled(true);
+				jButtonStop.setEnabled(false);
 				
 			}
 		});
 		
+		jButtonStop.setEnabled(false);
 		
 		add(jPanel, BorderLayout.WEST);
 		// Sempre será o último a ser executado
